@@ -15,7 +15,8 @@ imshow(imROI);
 histogram(imROI(:));
 
 
-[row, col] = find(imROI<=100);
+[row, col] = find(imROI<=125);
 mY = mean(row);
 
 valores_filas(end+1) = mY;
+disp(size(valores_filas))

@@ -13,10 +13,15 @@ imROI = im(r(2):r(2)+r(4), r(1):r(1)+r(3));
 
 imshow(imROI);
 
-histogram(imROI(:));
-
-
-[row, col] = find(imROI<=100);
+[row, col] = find(imROI<=125);
 mY = mean(row);
 
-interpolacion_sensor(mY, 2)
+interp = interpolacion_sensor(load('medidas2.mat').medidas, 1);
+
+xs = 12:1:132;
+ys = calcula_distancia(interp, xs);
+
+plot(xs, ys);
+
+dist = calcula_distancia(interp, mY);
+fprintf("Encontrado que mY = %f, la distancia es: %f\n", mY, dist);
