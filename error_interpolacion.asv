@@ -1,0 +1,8 @@
+
+function [] = error_interpolacion(interp, datos)
+    x = reshape(datos.', [1, size(datos,1)*size(datos,2)]).';
+    pred = calcula_distancia(interp, x);
+    y = erf(x);
+    
+    
+end

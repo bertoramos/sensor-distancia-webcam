@@ -24,4 +24,9 @@ ys = calcula_distancia(interp, xs);
 plot(xs, ys);
 
 dist = calcula_distancia(interp, mY);
-fprintf("Encontrado que mY = %f, la distancia es: %f\n", mY, dist);
+fprintf("Encontrado que mY = %f, la distancia es: %f cm\n", mY, dist);
+
+
+merr = error_interpolacion(load('medidas2.mat').medidas, 1);
+
+fprintf("El error medio %f\n", merr);
